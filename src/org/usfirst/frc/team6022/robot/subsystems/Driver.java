@@ -1,6 +1,8 @@
 
 package org.usfirst.frc.team6022.robot.subsystems;
 
+import org.usfirst.frc.team6022.robot.commands.NaturalDrive;
+
 import edu.wpi.first.wpilibj.Joystick;
 //import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -9,10 +11,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Driver extends Subsystem 
 {
 	
-static VictorSP Vector = new VictorSP(0);
-static VictorSP whenwillyoulearn = new VictorSP(1);
-static VictorSP Oranges = new VictorSP(2);
-static VictorSP skrrt = new VictorSP(3);
+static VictorSP SP1 = new VictorSP(0);
+static VictorSP SP2 = new VictorSP(1);
+static VictorSP SP3 = new VictorSP(2);
+static VictorSP SP4 = new VictorSP(3);
+static VictorSP Testing = new VictorSP(4);
 
 public Driver()
 {
@@ -21,30 +24,40 @@ public Driver()
 	
 	public void initDefaultCommand() 
 	{
-
+	  setDefaultCommand (new NaturalDrive());
 	}
 	
-	public void StickyDrive(Joystick Branjoy)
+	public void NaturalDrive(Joystick Branjoy) 
 	{
-		whenwillyoulearn.set(0.0);
+		
+		if (Branjoy.getY() >= .15 || Branjoy.getY() <= -.15)
+		{
+			
+			SP1.set(Branjoy.getY()*0.85);
+			SP2.set(Branjoy.getY()*0.85);
+			SP3.set(-Branjoy.getY()*0.85);
+			SP4.set(-Branjoy.getY()*0.85);
+		}
+		
+		else
+		{
+			SP1.set(Branjoy.getX()*0.75);
+			SP2.set(Branjoy.getX()*0.75);
+			SP3.set(Branjoy.getX()*0.75);
+			SP4.set(Branjoy.getX()*0.75);
+
+		}
 	}
-	public void OffyDrive(Joystick Branjoy)
+	
+	public void Lefty(double inputSpeed)
 	{
-		Vector.set(0.0);
+		SP1.set(.5);
+		SP2.set(.5);
+		SP3.set(.5);
+		SP4.set(.5);
 	}
-	public void BoT(Joystick Branjoy)
+	public void TestMotor()
 	{
-		Oranges.set(0.0);
-	}
-	public void Vegetables(Joystick Branjoy)
-	{
-		skrrt.set(0.5);
-	}
-	public void AllOff(Joystick Branjoy)
-	{
-		whenwillyoulearn.set(0);
-		Vector.set(0);
-		Oranges.set(0);
-		skrrt.set(0);
+		Testing.set(0.0);
 	}
 }

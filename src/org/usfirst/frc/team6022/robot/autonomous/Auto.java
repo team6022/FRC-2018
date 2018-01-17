@@ -3,7 +3,6 @@ package org.usfirst.frc.team6022.robot.autonomous;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc.team6022.robot.autonomous.Left;
-import org.usfirst.frc.team6022.robot.autonomous.Right;
 
 public class Auto extends CommandGroup {
 
@@ -12,13 +11,13 @@ public class Auto extends CommandGroup {
 	public Auto()
 	{
 		gameData = DriverStation.getInstance().getGameSpecificMessage();
-		if(gameData.charAt(1) == 'L')
+		if(gameData.charAt(0) == 'L')
 		{
-			addSequential(new Left());
+			addSequential(new Left(1, 1));
 		} 
 		else 
 		{
-			addSequential(new Right());
+
 		}
 	}
 }

@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 
 import org.usfirst.frc.team6022.robot.autonomous.Auto;
-//import org.usfirst.frc.team6022.robot.commands.NaturalDrive;
+import org.usfirst.frc.team6022.robot.commands.NaturalDrive;
 import org.usfirst.frc.team6022.robot.subsystems.TankDrive;
 import org.usfirst.frc.team6022.robot.subsystems.Driver;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;

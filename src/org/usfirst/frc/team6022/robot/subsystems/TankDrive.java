@@ -29,7 +29,23 @@ public class TankDrive extends Subsystem {
 
 	public void NaturalDrive(Joystick Branjoy) 
 	{
+		if (Branjoy.getY() >= .15 || Branjoy.getY() <= -.15)
+		{
+			
+			drive.set(Branjoy.getY()*0.85);
+			drive1.set(Branjoy.getY()*0.85);
+			drive2.set(-Branjoy.getY()*0.85);
+			drive3.set(-Branjoy.getY()*0.85);
+		}
+		
+		else
+		{
+			drive.set(Branjoy.getX()*0.75);
+			drive1.set(Branjoy.getX()*0.75);
+			drive2.set(Branjoy.getX()*0.75);
+			drive3.set(Branjoy.getX()*0.75);
 
+		}
 	}
 	
 }
