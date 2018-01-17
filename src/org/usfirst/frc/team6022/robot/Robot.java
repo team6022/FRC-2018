@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team6022.robot.autonomous.Auto;
 import org.usfirst.frc.team6022.robot.commands.NaturalDrive;
 import org.usfirst.frc.team6022.robot.subsystems.TankDrive;
-import org.usfirst.frc.team6022.robot.subsystems.Driver;
+import org.usfirst.frc.team6022.robot.subsystems.TestSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 //import edu.wpi.cscore.UsbCamera;
@@ -37,8 +37,8 @@ import org.opencv.core.Mat;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
-	public static Driver Driver;
 	public static TankDrive TankDrive;
+	public static TestSubsystem TestSubsystem;
 
 
 	Command autonomousCommand;
@@ -78,7 +78,7 @@ public class Robot extends IterativeRobot {
 		// Initialize subsystems
 		// Initialize oi last to make work
 		TankDrive = new TankDrive();
-		Driver = new Driver();
+		TestSubsystem = new TestSubsystem();
 		oi = new OI();
 		//Keep OI at the bottom
 

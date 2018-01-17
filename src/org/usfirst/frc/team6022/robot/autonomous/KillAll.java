@@ -7,18 +7,18 @@ public class KillAll extends Command {
 
 	private double Time;
 	public KillAll(double inputTime) {
-		requires(Robot.Driver);
+		requires(Robot.TankDrive);
 		Time = inputTime;
 
 	}
 
 	protected void initialize() {
-		Robot.Driver.TestMotor();
+		Robot.TankDrive.TestMotor();
 		setTimeout(Time);
 	}
 
 	protected void execute() {
-		Robot.Driver.TestMotor();
+		Robot.TankDrive.TestMotor();
 	}
 
 	protected boolean isFinished() {
@@ -26,7 +26,7 @@ public class KillAll extends Command {
 	}
 
 	protected void end() {
-		Robot.Driver.TestMotor();
+		Robot.TankDrive.TestMotor();
 	}
 
 	protected void interrupted(){

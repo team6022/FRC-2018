@@ -11,10 +11,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class TankDrive extends Subsystem {
 	
-	static VictorSP drive = new VictorSP(0);
-	static VictorSP drive1 = new VictorSP(1);
-	static VictorSP drive2 = new VictorSP(2);
-	static VictorSP drive3 = new VictorSP(3);
+	static VictorSP SP1 = new VictorSP(0);
+	static VictorSP SP2 = new VictorSP(1);
+	static VictorSP SP3 = new VictorSP(2);
+	static VictorSP SP4 = new VictorSP(3);
+	static VictorSP Testing = new VictorSP(4);
 
 	public TankDrive() 
 	{
@@ -32,21 +33,41 @@ public class TankDrive extends Subsystem {
 		if (Branjoy.getY() >= .15 || Branjoy.getY() <= -.15)
 		{
 			
-			drive.set(Branjoy.getY()*0.85);
-			drive1.set(Branjoy.getY()*0.85);
-			drive2.set(-Branjoy.getY()*0.85);
-			drive3.set(-Branjoy.getY()*0.85);
+			SP1.set(Branjoy.getY()*0.85);
+			SP2.set(Branjoy.getY()*0.85);
+			SP3.set(-Branjoy.getY()*0.85);
+			SP4.set(-Branjoy.getY()*0.85);
 		}
 		
 		else
 		{
-			drive.set(Branjoy.getX()*0.75);
-			drive1.set(Branjoy.getX()*0.75);
-			drive2.set(Branjoy.getX()*0.75);
-			drive3.set(Branjoy.getX()*0.75);
-
+			SP1.set(Branjoy.getX()*0.75);
+			SP2.set(Branjoy.getX()*0.75);
+			SP3.set(Branjoy.getX()*0.75);
+			SP4.set(Branjoy.getX()*0.75);
 		}
 	}
 	
+	public void Lefty(double speed)
+	{
+		SP1.set(.5);
+		SP2.set(.5);
+		SP3.set(.5);
+		SP4.set(.5);
+	}
+	
+	public void Righty(double speed)
+	{
+		SP1.set(-.5);
+		SP2.set(-.5);
+		SP3.set(-.5);
+		SP4.set(-.5);
+	}
+	
+	public void TestMotor()
+	{
+		Testing.set(0.0);
+	}
 }
+
 

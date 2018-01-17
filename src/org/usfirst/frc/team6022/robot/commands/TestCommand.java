@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Stop extends Command {
+public class TestCommand extends Command {
 
-    public Stop() {
+    public TestCommand() {
         // Use requires() here to declare subsystem dependencies
+    	requires(Robot.TestSubsystem);
         // eg. requires(chassis);
-    	requires(Robot.TankDrive);
     }
 
     // Called just before this Command runs the first time
@@ -21,7 +21,7 @@ public class Stop extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//Robot.Driver.AllOff(Robot.oi.getJoystick());
+    	Robot.TestSubsystem.StartTest(Robot.oi.getJoystick());
     }
 
     // Make this return true when this Command no longer needs to run execute()
