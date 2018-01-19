@@ -9,16 +9,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Lift extends Subsystem {
 
-    public Lift()	{
+    public Lift()
+    {
     	super();
     }
 	
-    public void initDefaultCommand() {
+    public void initDefaultCommand()
+    {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void Up(Joystick Branjoy) {
+    public void Up(Joystick Branjoy)
+    {
     	
     }
 }
