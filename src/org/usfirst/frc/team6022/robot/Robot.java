@@ -55,6 +55,8 @@ public class Robot extends IterativeRobot {
 		// CameraServer.getInstance().startAutomaticCapture();
 
 		
+		
+		
 		// Matt did this		
 //		new Thread(() -> {
 //			UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
