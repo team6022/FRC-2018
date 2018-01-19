@@ -11,6 +11,7 @@ import org.usfirst.frc.team6022.robot.autonomous.Auto;
 import org.usfirst.frc.team6022.robot.commands.NaturalDrive;
 import org.usfirst.frc.team6022.robot.subsystems.TankDrive;
 import org.usfirst.frc.team6022.robot.subsystems.TestSubsystem;
+import org.usfirst.frc.team6022.robot.subsystems.Lift;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 //import edu.wpi.cscore.UsbCamera;
@@ -39,6 +40,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static TankDrive TankDrive;
 	public static TestSubsystem TestSubsystem;
+	public static Lift Lift;
 
 
 	Command autonomousCommand;
@@ -83,6 +85,7 @@ public class Robot extends IterativeRobot {
 		// Initialize oi last to make work
 		TankDrive = new TankDrive();
 		TestSubsystem = new TestSubsystem();
+		Lift = new Lift();
 		oi = new OI();
 		//Keep OI at the bottom
 
