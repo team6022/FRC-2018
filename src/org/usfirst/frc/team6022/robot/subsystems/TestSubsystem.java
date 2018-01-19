@@ -6,12 +6,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class TestSubsystem extends Subsystem {
 	
-	static VictorSP TestingMotor = new VictorSP(5);
+	static VictorSP TestingMotor = new VictorSP(5); 
 
 public TestSubsystem()
 	{
 		super();
 	}
+
+
+
 
     public void initDefaultCommand() 
     {
