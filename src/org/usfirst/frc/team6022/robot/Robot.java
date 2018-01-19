@@ -56,23 +56,23 @@ public class Robot extends IterativeRobot {
 
 		
 		// Matt did this		
-		new Thread(() -> {
-			UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-			camera.setResolution(640, 480);
-			
-			/*CvSink*/edu.wpi.cscore.CvSink cvSink = CameraServer.getInstance().getVideo();
-			CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
-			
-			Mat source = new Mat();
-			Mat output = new Mat();
-			
-			while(!Thread.interrupted()) {
-				cvSink.grabFrame(source);
-				Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-				outputStream.putFrame(output);
-			}
-			
-		}).start();
+//		new Thread(() -> {
+//			UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+//			camera.setResolution(640, 480);
+//			
+//			/*CvSink*/edu.wpi.cscore.CvSink cvSink = CameraServer.getInstance().getVideo();
+//			CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+//			
+//			Mat source = new Mat();
+//			Mat output = new Mat();
+//			
+//			while(!Thread.interrupted()) {
+//				cvSink.grabFrame(source);
+//				Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+//				outputStream.putFrame(output);
+//			}
+//			
+//		}).start();
 		// End Matt
 		
 		// Initialize subsystems
