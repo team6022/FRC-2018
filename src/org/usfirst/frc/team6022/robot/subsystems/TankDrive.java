@@ -4,6 +4,7 @@ import org.usfirst.frc.team6022.robot.commands.NaturalDrive;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -48,25 +49,44 @@ public class TankDrive extends Subsystem {
 		}
 	}
 	
-	public void Lefty(double speed)
-	{
-		SP1.set(.5);
-		SP2.set(.5);
-		SP3.set(.5);
-		SP4.set(.5);
-	}
-	
 	public void Righty(double speed)
 	{
-		SP1.set(-.5);
-		SP2.set(-.5);
-		SP3.set(-.5);
-		SP4.set(-.5);
+		SP1.set(speed);
+		SP2.set(speed);
+		SP3.set(speed);
+		SP4.set(speed);
 	}
 	
+	public void Lefty(double speed)
+	{
+		SP1.set(-speed);
+		SP2.set(-speed);
+		SP3.set(-speed);
+		SP4.set(-speed);
+	}
+	
+	public void Straighty(double speed)
+	{
+		SP1.set(0.55);
+		SP2.set(0.55);
+		SP3.set(-speed);
+		SP4.set(-speed);
+//		System.out.println("Straighty Is Working");
+	}
+	
+	public void Backy(double speed)
+	{
+		SP1.set(speed);
+		SP2.set(speed);
+		SP3.set(speed);
+		SP4.set(speed);
+	}
 	public void TestMotor()
 	{
-		Testing.set(0.0);
+		SP1.set(0);
+		SP2.set(0);
+		SP3.set(0);
+		SP4.set(0);
 	}
 }
 
