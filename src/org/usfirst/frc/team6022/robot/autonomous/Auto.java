@@ -16,12 +16,12 @@ public class Auto extends CommandGroup {
 		// gameData = DriverStation.getInstance().getGameSpecificMessage();
 		// if(gameData.charAt(0) == 'L')
 	//	{
-			addSequential(new Straight(0.5, 2));
+			addSequential(new Straight(0.5, 1));
 			//addSequential(new Right(0.5, 0.681));
 			addSequential(new KillAll(0.5));
 	//	} 
 		// else 
 	//	{
-		// } 
+		// } 	
 	}
 }

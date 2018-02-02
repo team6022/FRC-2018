@@ -7,11 +7,11 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class TestCommand extends Command {
+public class DeflateCommand extends Command {
 
-    public TestCommand() {
+    public DeflateCommand() {
         // Use requires() here to declare subsystem dependencies
-    	requires(Robot.TestSubsystem);
+    	requires(Robot.Lift);
         // eg. requires(chassis);
     }
 
@@ -21,7 +21,7 @@ public class TestCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.TestSubsystem.Testit(Robot.oi.getJoystick());
+    	Robot.Lift.Down(Robot.oi.getJoystick());
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -16,6 +16,7 @@ public class Lift extends Subsystem {
 	static VictorSP FirstLevel = new VictorSP(5); 
 	static VictorSP SecondLevel = new VictorSP(6);
 	static VictorSP ThirdLevel = new VictorSP(7);
+	boolean Open = true;
 
     public Lift()
     {
@@ -30,28 +31,34 @@ public class Lift extends Subsystem {
     
     public void Up(Joystick Branjoy)
 	{
-		if (switch1.get()) 
+		if (switch1.get() == Open) 
 		{
 			FirstLevel.set(0.3);
+			SecondLevel.set(0.0);
 		} 
 		else 
 		{
-			if (switch2.get()) 
+			if (switch2.get() == Open)
 			{
 				FirstLevel.set(0.0);
 				SecondLevel.set(0.3);
 			}
 			else
 			{
+				FirstLevel.set(0.0);
 				SecondLevel.set(0.0);
-				ThirdLevel.set(0.3);
 			}
 		}
 	}
+    
+    public void Down(Joystick Branjoy)
+    {
+	    FirstLevel.set(-0.0);
+	    SecondLevel.set(-0.3);
+    }
+ 
     public void stopMotor(Joystick Branjoy)
 	{
-		
-    
 	}
 
 }

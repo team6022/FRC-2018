@@ -7,17 +7,17 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team6022.robot.commands.ElevateCommand;
 import org.usfirst.frc.team6022.robot.commands.Stop;
 import org.usfirst.frc.team6022.robot.commands.NaturalDrive;
-import org.usfirst.frc.team6022.robot.commands.TestCommand;
+import org.usfirst.frc.team6022.robot.commands.DeflateCommand;
 
 public class OI 
 {
 final Joystick Branjoy = new Joystick(0);
-Button Test = new JoystickButton(Branjoy,1);
-Button Elevate = new JoystickButton(Branjoy,2);
+Button Deflate = new JoystickButton (Branjoy,2);
+Button Elevate = new JoystickButton(Branjoy,1);
 
 	public OI() 
 	{
-		Test.whenPressed(new TestCommand());
+		Deflate.whenPressed(new DeflateCommand());
 		Elevate.whenPressed(new ElevateCommand());
 	}
 	
