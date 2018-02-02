@@ -53,7 +53,7 @@ public class Lift extends Subsystem {
     
     public void Down(Joystick Branjoy)
     {
-	    FirstLevel.set(-0.0);
+	    FirstLevel.set(-0.3);
 	    SecondLevel.set(-0.3);
     }
  
