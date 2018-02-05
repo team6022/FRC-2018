@@ -40,8 +40,16 @@ public class Lift extends Subsystem {
 		{
 			if (switch2.get() == Open)
 			{
+				if(SecondLevel.getSpeed() == -0.3)
+				{
+					FirstLevel.set(0.0);
+					SecondLevel.set(-0.3);
+				}
+				else
+				{
 				FirstLevel.set(0.0);
 				SecondLevel.set(0.3);
+				}
 			}
 			else
 			{
