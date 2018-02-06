@@ -25,8 +25,7 @@ public class Lift extends Subsystem {
 	
     public void initDefaultCommand()
     {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        
     }
     
     public void Up(Joystick Branjoy)
@@ -40,8 +39,16 @@ public class Lift extends Subsystem {
 		{
 			if (switch2.get() == Open)
 			{
+				if (SecondLevel.getSpeed() == -.3)
+				{
+					FirstLevel.set(-.3);
+					SecondLevel.set(-.3);
+				}
+				else
+				{
 				FirstLevel.set(0.0);
 				SecondLevel.set(0.3);
+				}
 			}
 			else
 			{
@@ -55,6 +62,14 @@ public class Lift extends Subsystem {
     {
 	    FirstLevel.set(-0.3);
 	    SecondLevel.set(-0.3);
+    }
+    public void GoUppy(double speed)
+    {
+    
+    }
+    public void NoUppy()
+    {
+    	
     }
  
     public void stopMotor(Joystick Branjoy)
