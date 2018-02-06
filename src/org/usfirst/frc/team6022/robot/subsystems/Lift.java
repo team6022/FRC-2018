@@ -10,10 +10,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * not pressed it'll go the other way.
  */
 public class Lift extends Subsystem {
-	
+
 	DigitalInput switch1 = new DigitalInput(0);
 	DigitalInput switch2 = new DigitalInput(1);
-	static VictorSP FirstLevel = new VictorSP(5); 
+	static VictorSP FirstLevel = new VictorSP(5);
 	static VictorSP SecondLevel = new VictorSP(6);
 	static VictorSP ThirdLevel = new VictorSP(7);
 	boolean Open = true;
@@ -22,20 +22,20 @@ public class Lift extends Subsystem {
     {
     	super();
     }
-	
+
     public void initDefaultCommand()
     {
-        
+
     }
-    
+
     public void Up(Joystick Branjoy)
 	{
-		if (switch1.get() == Open) 
+		if (switch1.get() == Open)
 		{
 			FirstLevel.set(0.3);
 			SecondLevel.set(0.0);
-		} 
-		else 
+		}
+		else
 		{
 			if (switch2.get() == Open)
 			{
@@ -57,7 +57,7 @@ public class Lift extends Subsystem {
 			}
 		}
 	}
-    
+
     public void Down(Joystick Branjoy)
     {
 	    FirstLevel.set(-0.3);
@@ -65,16 +65,15 @@ public class Lift extends Subsystem {
     }
     public void GoUppy(double speed)
     {
-    
+
     }
     public void NoUppy()
     {
-    	
+
     }
- 
+
     public void stopMotor(Joystick Branjoy)
 	{
 	}
 
 }
-

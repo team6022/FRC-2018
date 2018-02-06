@@ -7,20 +7,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-
 public class Grab extends Subsystem {
-	Compressor CompLeft = new Compressor(0);
-	Compressor CompRight = new Compressor(1);
-    public Grab()
-    {
-    	super ();
-    }
+
+	Compressor CompRight = new Compressor(0);
+	Compressor CompLeft = new Compressor(1);
+
+	public Grab()
+	{
+		super();
+	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    public void Compressy(Joystick Branjoy) 
+    public void Compressy(Joystick Branjoy)
     {
     	if (CompLeft.getClosedLoopControl() == false)
     	{
@@ -34,4 +35,3 @@ public class Grab extends Subsystem {
     	}
     }
 }
-
