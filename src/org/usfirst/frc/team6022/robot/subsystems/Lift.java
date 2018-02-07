@@ -66,6 +66,7 @@ public class Lift extends Subsystem {
     public void GoUppy(double speed)
     {
 
+    	
     }
     public void NoUppy()
     {
@@ -74,6 +75,8 @@ public class Lift extends Subsystem {
 
     public void stopMotor(Joystick Branjoy)
 	{
+    	
 	}
-
 }
+
+
