@@ -12,14 +12,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class TankDrive extends Subsystem {
 	
-	static VictorSP SP1 = new VictorSP(0);
-	static VictorSP SP2 = new VictorSP(1);
-	static VictorSP SP3 = new VictorSP(2);
-	static VictorSP SP4 = new VictorSP(3);
+	static Spark SP1 = new Spark(0);
+	static Spark SP2 = new Spark(1);
+	static Spark SP3 = new Spark(2);
+	static Spark SP4 = new Spark(3);
 	static VictorSP Testing = new VictorSP(4);
 
 	public TankDrive() 
 	{
+		
 		super();
 	}
 
