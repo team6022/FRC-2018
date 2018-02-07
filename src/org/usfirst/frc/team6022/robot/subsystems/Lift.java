@@ -73,6 +73,5 @@ public class Lift extends Subsystem {
     public void stopMotor(Joystick Branjoy)
 	{
 	}
-
 }
 
