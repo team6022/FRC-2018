@@ -1,9 +1,7 @@
 package org.usfirst.frc.team6022.robot.autonomous;
 
 import org.usfirst.frc.team6022.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
-
 /**
  *
  */
@@ -38,9 +36,10 @@ public class Left extends Command {
     protected void end() {
     	Robot.TankDrive.TestMotor();    
     	}
-
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
+    /**
+     Called when another command which requires one or more of the same
+     subsystems is scheduled to run 
+     */
     protected void interrupted() {
     }
 }

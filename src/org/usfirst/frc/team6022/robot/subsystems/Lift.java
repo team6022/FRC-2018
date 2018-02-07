@@ -64,7 +64,12 @@ public class Lift extends Subsystem {
 	    FirstLevel.set(-0.3);
 	    SecondLevel.set(-0.3);
     }
- 
+    public void addchildren() {
+    	
+    }
+    public void addchild(double Speed) {
+    	
+    }
     public void stopMotor(Joystick Branjoy)
 	{
 	}
