@@ -20,7 +20,7 @@ public class Auto extends CommandGroup {
 			//addSequential(new Right(0.5, 0.681));
 			addSequential(new KillAll(0.5));
 	//	} 
-		// else 
+		// else  
 	//	{
 		// } 	
 	}
