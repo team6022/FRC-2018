@@ -1,6 +1,7 @@
 package org.usfirst.frc.team6022.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -9,8 +10,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Grab extends Subsystem {
 
-	Compressor CompRight = new Compressor(0);
-	Compressor CompLeft = new Compressor(1);
+	DoubleSolenoid TestSolenoid = new DoubleSolenoid(0, 1);
+	private double X = 0;
 
 	public Grab()
 	{
@@ -23,15 +24,15 @@ public class Grab extends Subsystem {
     }
     public void Compressy(Joystick Branjoy)
     {
-    	if (CompLeft.getClosedLoopControl() == false)
-    	{
-    		CompLeft.setClosedLoopControl(true);
-    		CompRight.setClosedLoopControl(true);
-    	}
-    	else
-    	{
-    		CompLeft.setClosedLoopControl(false);
-    		CompRight.setClosedLoopControl(false);
-    	}
+	    if (X == 0)
+	    {
+	    		TestSolenoid.set(DoubleSolenoid.Value.kReverse);
+	    		X++;
+	    }
+	    else
+	    {
+	    	TestSolenoid.set(DoubleSolenoid.Value.kForward);
+			X--;
+	    }
     }
 }
