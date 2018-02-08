@@ -24,15 +24,16 @@ public class Grab extends Subsystem {
     }
     public void Compressy(Joystick Branjoy)
     {
-	    if (X == 0)
-	    {
+	  
+	    
 	    		TestSolenoid.set(DoubleSolenoid.Value.kReverse);
-	    		X++;
-	    }
-	    else
-	    {
-	    	TestSolenoid.set(DoubleSolenoid.Value.kForward);
-			X--;
-	    }
+	    		}
+	    
+	  
+   public void Shots(Joystick Branjoy)
+   {
+	   TestSolenoid.set(DoubleSolenoid.Value.kForward);
+	   
+   }
     }
-}
+
